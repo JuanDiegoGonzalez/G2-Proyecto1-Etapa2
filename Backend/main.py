@@ -24,7 +24,9 @@ def make_predictions(row: DataModel):
    df = pd.DataFrame(row.dict(), columns=row.dict().keys(), index=[0])
    df.columns = row.columns()
 
-   new_df = prepare(df)
-
-   result = model.predict(new_df)
-   return result.tolist()[0]
+   try:
+      new_df = prepare(df)
+      result = model.predict(new_df)
+      return result.tolist()[0]
+   except:
+      return -1

@@ -121,9 +121,5 @@ def prepare(data_t):
         values = [[0 for i in range(len(words))]]
         df = pd.DataFrame(values, columns =words)
 
-    for name, values in pd.concat([df, X_tfidf], axis=1).iteritems():
-        if values[0] > 0: 
-            print('{name}: {value}'.format(name=name, value=values[0]))
-
     return pd.concat([df, X_tfidf], axis=1)
     
