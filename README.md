@@ -41,4 +41,6 @@
 
 ## Instrucciones de despliegue de la aplicación web:
 
-1. A
+Teniendo en cuenta que el front se desarrolló usando solamente un archivo de tipo HTML, se debería poder correr de la siguiente manera:
+
+1. Abrir directamente la carpeta "Frontend" y darle doble click izquierdo al archivo front.html. Si no abre de esta forma, intentar con click derecho > abrir con > seleccionar el explorador web favorito.
