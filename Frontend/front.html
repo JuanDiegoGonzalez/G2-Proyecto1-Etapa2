@@ -1,0 +1,75 @@
+<style>
+  html, body {
+    height: 100%;
+}
+  #list1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  }
+  #input {
+    width: 500px;
+    height: 100px;
+    resize: none;
+  }
+
+</style>
+
+<div id="list1">
+  <h2>Determinar la elegibilidad de un paciente para ensayos clínicos de cáncer a partir de
+    texto descriptivo</h2>
+  <textarea id="input" type="text"></textarea>
+  <button id="boton">Procesar</button>
+  <button id="boton2">Ver integrantes del grupo</button>
+  <p id="texto">Acá se verán los resultados</p>
+</div>
+
+<script>
+
+    let $boton = document.querySelector('#boton');
+    let $texto = document.querySelector('#texto');
+    let $integrantes = document.querySelector('#boton2');
+
+        // handle the link click
+        $boton.addEventListener('click', async function (event) {
+            var val = $boton.previousElementSibling.value;
+            console.log(val)
+            var myBody = {
+              study_and_condition:val
+            }
+console.log(myBody)
+            if(val == ''){
+                $texto.innerHTML = 'No hay texto ingresado en el campo';
+            }else{
+                $texto.innerHTML = 'Procesando...';
+                const response = await fetch('http://127.0.0.1:8000/predict', {
+                method: 'POST',
+                body: JSON.stringify(myBody),
+            headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            const myJson = await response.json();
+
+            if(myJson == 0)
+            {
+              $texto.innerHTML = myJson + " - El procesamiento del texto descriptivo ingresado indica que el paciente NO es elegible para ensayos clínicos de cáncer.";
+            } else if(myJson == 1)
+            {
+              $texto.innerHTML = myJson + " - El procesamiento del texto descriptivo ingresado indica que el paciente SÍ es elegible para ensayos clínicos de cáncer";
+            } else {
+              $texto.innerHTML = 'El texto no tiene un formato adecuado.';
+            }
+            }
+        })
+
+        $integrantes.addEventListener('click', async function (event) {
+            const response = await fetch('http://127.0.0.1:8000/integrantes')
+            const myJson = await response.json();
+            $texto.innerHTML = myJson;
+        })
+</script>
