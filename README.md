@@ -39,8 +39,6 @@
 
 4. Se podrá verificar el funcionamiento del programa ingresando desde un navegador a la URL http://127.0.0.1:8000/ (se debe visualizar un objeto JSON: "{"Hello":"World"}")
 
-## Instrucciones de despliegue de la aplicación web:
+## Instrucciones de ejecución de la aplicación web:
 
-Teniendo en cuenta que el front se desarrolló usando solamente un archivo de tipo HTML, se debería poder correr de la siguiente manera:
-
-1. Abrir directamente la carpeta "Frontend" y darle doble click izquierdo al archivo front.html. Si no abre de esta forma, intentar con click derecho > abrir con > seleccionar el explorador web favorito.
+1. Abrir la carpeta "Frontend" desde el explorador de archivos y darle doble click izquierdo al archivo front.html. Si no abre de esta forma, intentar con click derecho > abrir con > seleccionar el explorador web de su preferencia.
