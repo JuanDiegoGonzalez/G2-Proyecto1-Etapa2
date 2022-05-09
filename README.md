@@ -1,4 +1,4 @@
-# Laboratorio 4
+# Proyecto 1 - Etapa 2
 
 ## Integrantes:
 * Juan Felipe Peña Criado (201426463) 
@@ -12,7 +12,7 @@
 1. Clonar o descargar el repositorio:
 
   ```shell
-  git clone https://github.com/JuanDiegoGonzalez/G2-Laboratorio-4.git
+  git clone https://github.com/JuanDiegoGonzalez/G2-Proyecto1-Etapa2.git
   ```
 
 2. Abrir el proyecto en Android Studio o el IDE de su preferencia
@@ -37,9 +37,9 @@ Opción A - Realizar peticiones desde el navegador:
 
 1. Con el programa ejecutándose (ver sección anterior), ingresar desde un navegador a la URL: http://127.0.0.1:8000/docs#/
 
-2. Hacer click en las secciones POST (rutas /predict y /r2)
+2. Hacer click en la seccion POST (ruta /predict)
 
-3. Hacer click en el botón "Try it out"
+3. Hacer click en el botón "Try it out"---
 
 4. Modificar el objeto JSON (ver ejemplos válidos en el documento enviado por la actividad de Bloque Neon)
 
