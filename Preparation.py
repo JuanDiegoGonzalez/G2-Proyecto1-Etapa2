@@ -116,10 +116,14 @@ def prepare(data_t):
             if i in words:
                 words.remove(i)
             else:
-                X_tfidf.columns.drop([i],axis=1,inplace=True)
+                X_tfidf.drop([i],axis=1,inplace=True)
 
         values = [[0 for i in range(len(words))]]
         df = pd.DataFrame(values, columns =words)
+
+    for name, values in pd.concat([df, X_tfidf], axis=1).iteritems():
+        if values[0] > 0: 
+            print('{name}: {value}'.format(name=name, value=values[0]))
 
     return pd.concat([df, X_tfidf], axis=1)
     
